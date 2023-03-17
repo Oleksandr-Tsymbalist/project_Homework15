@@ -16,6 +16,7 @@
         <slf4j.version>2.0.6</slf4j.version>
         <logback_classic.version>1.4.5</logback_classic.version>
         <logback_core.version>1.4.5</logback_core.version>
+        <selenium_java.version>3.141.59</selenium_java.version>
     </properties>
 
     <dependencies>
@@ -39,6 +40,12 @@
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-core</artifactId>
             <version>${logback_core.version}</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>${selenium_java.version}</version>
         </dependency>
     </dependencies>
 
