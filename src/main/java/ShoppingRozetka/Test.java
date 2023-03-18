@@ -9,6 +9,6 @@ public class Test {
         WebDriverManager.chromedriver().arch64().setup();
         WebDriver driver = new ChromeDriver();
         driver.get("https://www.youtube.com/");
-        driver.close();
+        //driver.close();
     }
 }
