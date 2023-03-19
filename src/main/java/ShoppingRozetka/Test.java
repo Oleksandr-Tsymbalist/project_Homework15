@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -22,14 +23,14 @@ public class Test {
 
         WebElement findButton = driver.findElement(By.xpath("//div//button[contains(text(),'Знайти')]"));
         findButton.click();
-        Thread.sleep(1000);
+        Thread.sleep(300);
 
         WebElement findAcerElement = driver.findElement(By.xpath("//ul[contains(@class,'catalog-grid')]/li[3]"));
         findAcerElement.click();
 
         WebElement findBuyButton = driver.findElement(By.xpath("//app-buy-button/button/span"));
         findBuyButton.click();
-        Thread.sleep(1000);
+        Thread.sleep(300);
 
         WebElement findShoppingButton = driver.findElement(By.xpath("//div/button[contains(text(),'Продовжити покупки')]"));
         findShoppingButton.click();
@@ -39,14 +40,14 @@ public class Test {
 
         WebElement findButtonSecondProduct = driver.findElement(By.xpath("//div//button[contains(text(),'Знайти')]"));
         findButtonSecondProduct.click();
-        Thread.sleep(1000);
+        Thread.sleep(300);
 
         WebElement findFreggiaElement = driver.findElement(By.xpath("//ul[contains(@class,'catalog-grid')]/li[3]"));
         findFreggiaElement.click();
 
         WebElement findFreggiaBuyButton = driver.findElement(By.xpath("//app-buy-button/button/span"));
         findFreggiaBuyButton.click();
-        Thread.sleep(1000);
+        Thread.sleep(300);
 
         WebElement findFreggiaShoppingButton = driver.findElement(By.xpath("//div/button[contains(text(),'Продовжити покупки')]"));
         findFreggiaShoppingButton.click();
@@ -55,9 +56,9 @@ public class Test {
         findCartButton.click();
 
         List<WebElement> list = driver.findElements(By.xpath("//ul[@class='cart-list']/li"));
-        for (WebElement element : list) {
-            System.out.println(element);
-        }
+        Assert.assertEquals(list.size(), 2);
+
+
 
 
 
@@ -68,7 +69,5 @@ public class Test {
 
 
         //driver.close();
-
-
     }
 }
