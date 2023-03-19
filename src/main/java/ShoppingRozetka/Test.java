@@ -6,11 +6,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
-
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class Test {
+
     public static void main(String[] args) throws InterruptedException{
         WebDriverManager.chromedriver().arch64().setup();
         WebDriver driver = new ChromeDriver();
@@ -30,7 +30,7 @@ public class Test {
 
         WebElement findBuyButton = driver.findElement(By.xpath("//app-buy-button/button/span"));
         findBuyButton.click();
-        Thread.sleep(300);
+        Thread.sleep(1000);
 
         WebElement findShoppingButton = driver.findElement(By.xpath("//div/button[contains(text(),'Продовжити покупки')]"));
         findShoppingButton.click();
@@ -47,7 +47,7 @@ public class Test {
 
         WebElement findFreggiaBuyButton = driver.findElement(By.xpath("//app-buy-button/button/span"));
         findFreggiaBuyButton.click();
-        Thread.sleep(300);
+        Thread.sleep(1000);
 
         WebElement findFreggiaShoppingButton = driver.findElement(By.xpath("//div/button[contains(text(),'Продовжити покупки')]"));
         findFreggiaShoppingButton.click();
@@ -58,16 +58,6 @@ public class Test {
         List<WebElement> list = driver.findElements(By.xpath("//ul[@class='cart-list']/li"));
         Assert.assertEquals(list.size(), 2);
 
-
-
-
-
-
-
-
-
-
-
-        //driver.close();
+        driver.close();
     }
 }
