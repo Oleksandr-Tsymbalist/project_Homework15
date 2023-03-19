@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class RozetkaTest {
-    private final WebDriver driver = new ChromeDriver();
+    private WebDriver driver;
     private static final By SEARCH_INPUT = By.name("search");
     private static final By SEARCH_BUTTON = By.xpath("//div//button[contains(text(),'Знайти')]");
     private static final By FIND_ELEMENT = By.xpath("//ul[contains(@class,'catalog-grid')]/li[3]");
@@ -25,6 +25,7 @@ public class RozetkaTest {
     @BeforeTest
     public void beforeTest() {
         WebDriverManager.chromedriver().arch64().setup();
+        driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.manage().window().maximize();
         driver.get("https://rozetka.com.ua/ua/");
