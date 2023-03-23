@@ -19,8 +19,8 @@ public class FindElementsTest extends BaseTest {
         scrollTo();
         sleepALittleBit(1);
         scrollTo();
-        WebElement discussedProducts = driver.findElement(DISCUSSED_PRODUCTS);
-        jse.executeScript("arguments[0].scrollIntoView();", discussedProducts);
+        driver.findElement(DISCUSSED_PRODUCTS);
+        jse.executeScript("arguments[0].scrollIntoView();", DISCUSSED_PRODUCTS);
         for(WebElement element : driver.findElements(DISCUSSED_PRODUCTS_LIST)) {
             System.out.printf("%s коштує %s\n", element.findElement(DISCUSSED_PRODUCTS_NAME).getText(), element.findElement(DISCUSSED_PRICE).getText());
         }
