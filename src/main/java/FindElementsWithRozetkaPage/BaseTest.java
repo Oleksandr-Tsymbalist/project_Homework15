@@ -10,6 +10,8 @@ import org.testng.annotations.BeforeTest;
 
 import java.util.concurrent.TimeUnit;
 
+import static java.lang.String.format;
+
 public class BaseTest {
 
     protected WebDriver driver;
@@ -18,7 +20,7 @@ public class BaseTest {
     public void initBrowser(){
         WebDriverManager.chromedriver().arch64().setup();
         driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
         driver.manage().window().maximize();
         driver.get("https://rozetka.com.ua/ua/");
     }
@@ -28,9 +30,9 @@ public class BaseTest {
         driver.close();
     }
 
-    public void scrollTo(){
+    public void scrollByPixels(int pixels){
         JavascriptExecutor jse = (JavascriptExecutor) driver;
-        jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+        jse.executeScript(format("window.scrollBy(0, %d)", pixels));
     }
 
     public void sleepALittleBit(int second){
