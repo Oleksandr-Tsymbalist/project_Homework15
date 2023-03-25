@@ -16,7 +16,6 @@ public class FindElementsTest extends BaseTest {
     private static final By DISCUSSED_PRICE = By.xpath(".//div[contains(@class,'tile__price_color_red')]");
     private static final int ITERATIONS = 10;
 
-
     @Test
     public void findElementsTest() {
         int iterations = 0;
