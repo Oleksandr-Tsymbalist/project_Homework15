@@ -8,6 +8,11 @@ public class RozetkaTest extends BaseTest{
 
     @Test
     public void rozetkaTest () {
+        /*
+        Якщо у файл product.properties додати ще один товар, як це відобразиться на вашому тестовому методі?
+        Ніяк! Бо ви конкретно прописуєте, що саме 3 товари треба додати в корзину. Цикл може вирішити
+        цю проблему)
+        */
         mainPage.inputSearchValue(products[0]);
         productPage = mainPage.clickSearchButton()
                 .clickSelectProduct();
