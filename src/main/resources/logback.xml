@@ -15,7 +15,7 @@
         </encoder>
     </appender>-->
 
-    <logger name="ShoppingRozetka" level="DEBUG"/>
+    <logger name="ShopRozetka" level="DEBUG"/>
 
     <root level="DEBUG">
          <appender-ref ref="STDOUT"/>
