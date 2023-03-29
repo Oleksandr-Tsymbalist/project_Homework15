@@ -3,6 +3,7 @@ package ShoppingInRozetka;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class ProductPage extends BasePage{
 
@@ -19,11 +20,13 @@ public class ProductPage extends BasePage{
     }
 
     public CartPage clickBuyButton() {
+        wait.until(ExpectedConditions.visibilityOf(buyButton));
         buyButton.click();
         return new CartPage(driver);
     }
 
     public void clickShoppingButton() {
+        wait.until(ExpectedConditions.visibilityOf(shoppingButton));
         shoppingButton.click();
     }
 

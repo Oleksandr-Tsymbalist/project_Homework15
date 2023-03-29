@@ -18,7 +18,6 @@ public class RozetkaTest extends BaseTest{
             productPage = mainPage.clickSearchButton()
                     .clickSelectProduct();
             productPage.clickBuyButton();
-            sleepALittleBit(1);
             productPage.clickShoppingButton();
         }
         cartPage = productPage.clickCartIcon();
