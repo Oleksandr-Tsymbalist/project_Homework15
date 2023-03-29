@@ -4,8 +4,8 @@ package ShoppingInRozetka;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.testng.Assert;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class CartPage extends BasePage{
@@ -17,10 +17,11 @@ public class CartPage extends BasePage{
         super(driver);
     }
 
-    public void assertProductList(String... products) {
-        Assert.assertEquals(productList.size(), 3);
-        Assert.assertTrue(productList.get(0).getText().contains(products[2]));
-        Assert.assertTrue(productList.get(1).getText().contains(products[1]));
-        Assert.assertTrue(productList.get(2).getText().contains(products[0]));
+    public List<String> getNamesOfProductsInCart() {
+        List<String> names = new ArrayList<>();
+        for (WebElement element : productList) {
+            names.add(element.getText());
+        }
+        return names;
     }
 }

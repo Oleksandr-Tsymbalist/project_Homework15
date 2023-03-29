@@ -11,6 +11,9 @@ public class ProductPage extends BasePage{
     @FindBy(xpath = "//div/button[contains(text(),'Продовжити покупки')]")
     public WebElement shoppingButton;
 
+    @FindBy(xpath = "//ul[contains(@class,'header-actions')]/li[7]//button")
+    public WebElement cartButton;
+
     public ProductPage(WebDriver driver) {
         super(driver);
     }
@@ -24,4 +27,8 @@ public class ProductPage extends BasePage{
         shoppingButton.click();
     }
 
+    public CartPage clickCartIcon() {
+        cartButton.click();
+        return new CartPage(driver);
+    }
 }
