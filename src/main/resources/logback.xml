@@ -15,9 +15,9 @@
         </encoder>
     </appender>-->
 
-    <logger name="ShopRozetka" level="DEBUG"/>
+    <logger name="ShopRozetka" level="ERROR"/>
 
-    <root level="DEBUG">
+    <root level="ERROR">
          <appender-ref ref="STDOUT"/>
 <!--        <appender-ref ref="FILE"/>-->
     </root>

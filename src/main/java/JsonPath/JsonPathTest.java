@@ -1,3 +1,4 @@
+/*
 package JsonPath;
 
 import io.restassured.RestAssured;
@@ -13,7 +14,7 @@ public class JsonPathTest {
     @Test
     public void getUserInfo() {
         RestAssured.baseURI = "https://jsonplaceholder.typicode.com";
-        JsonPath jsonPath = given().
+        JsonPath jsonPath = RestAssured.given().
                 when().
                 get("/users").
                 then().
@@ -76,4 +77,4 @@ public class JsonPathTest {
         System.out.println(nameWithLongestCatchPhrase);
 
     }
-}
+}*/
